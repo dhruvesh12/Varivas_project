@@ -1,0 +1,29 @@
+
+<iframe  style="height: 500px;" width="100%" *ngIf="this.selectedMovie[0]" [src]="getUrl()" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; " allowfullscreen></iframe>
+
+    <hr/>
+
+<div  class="movie-content">
+    <div class="movie-poster"><img class="movie-img" style="height: 700px;"
+            src="https://image.tmdb.org/t/p/original/{{selectedMovie[0].poster_path}}"></div>
+    <div class="movie-data">
+        <div class="movie-info">
+            <div class="movie-head">
+                <h1 class="movie-title">{{this.selectedMovie[0].original_title}}</h1>
+                <!-- <h1 class="movie-tagline">Return to Pandora.</h1> -->
+            </div>
+            <div class="movie-subdata">
+                <div class="movie-left">
+                    <p class="movie-stars"><i class="fa fa-star" style="background-color: white;" aria-hidden="true"></i>Rating {{this.selectedMovie[0].vote_average}}</p>
+                </div>
+                <div class="movie-right">{{this.selectedMovie[0].release_date}}/ {{this.selectedMovie[0].runtime}} min</div>
+            </div>
+            <h3 class="movie-fields">The Genres</h3>
+            <div class="movie-tags"><span class="movie-taxonomy">{{this.selectedMovie[0].genres}}</span></div>
+            <h3 class="movie-fields">The Overview</h3>
+            <p class="movie-description">{{this.selectedMovie[0].overview}}</p>
+        </div>
+        
+    </div>
+</div>

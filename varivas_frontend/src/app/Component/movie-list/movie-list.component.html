@@ -1,0 +1,61 @@
+<div class="listing-section">
+    <div *ngFor="let i of AllData" class="product">
+        <div class="image-box">
+            <div class="images" id="image-1"><img (click)="SelectedMovie=i" (click)="openClose()" style="height: 351px" src="https://image.tmdb.org/t/p/original/{{i.poster_path}}" ></div>
+            <!-- <p class="description">{{i.title}}</p> -->
+        </div>
+        <!-- <div class="text-box">
+            <h2 class="item">Orange</h2>
+            <h3 class="price">$4.99</h3>
+            <p class="description">A bag of delicious oranges!</p>
+            <label for="item-1-quantity">Quantity:</label>
+            <input type="text" name="item-1-quantity" id="item-1-quantity" value="1">
+            <button type="button" name="item-1-button" id="item-1-button">Add to Cart</button>
+        </div> -->
+    </div>
+    
+    
+    
+   
+    
+    
+    
+</div>
+
+
+<div [ngStyle]="{'display':ModelStatus ? 'block' : 'none'}" id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span (click)="openClose()" class="close">&times;</span>
+      <div class="movie_card" id="bright">
+        <div  class="info_section">
+          <div class="movie_header">
+            <img class="locandina" src="https://image.tmdb.org/t/p/original/{{SelectedMovie.poster_path}}" loading="lazy"/>
+            <h1>{{SelectedMovie.original_title}}</h1>
+            <!-- <h4>2017, David Ayer</h4> -->
+            <span class="minutes">{{SelectedMovie.runtime}} min</span>
+            <p class="type">{{SelectedMovie.genres}}</p>
+          </div>
+          <div class="movie_desc">
+            <p class="text">
+              {{SelectedMovie.overview}}
+            </p>
+          </div>
+          <div class="movie_social">
+            <ul>
+              <!-- <li><i class="material-icons">share</i></li>
+              <li><i class="material-icons"></i></li> -->
+              <li routerLink="/movie-details/{{SelectedMovie.title}}" ><i class="material-icons"><h3 class="btn" style="font-size: xxx-large;bottom: 0;
+                left: 26px;">Play</h3></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="blur_back bright_back" style="background: url('https://image.tmdb.org/t/p/original/{{SelectedMovie.poster_path}}'); background-repeat: no-repeat;"></div>
+      </div>
+    </div>
+  
+  </div>
+
+
+  
